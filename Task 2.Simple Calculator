@@ -1,0 +1,42 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    double num1, num2;
+    char kmk;
+    double result;
+
+    // Taking input from the user
+    cout << "Enter first number: ";
+    cin >> num1;
+
+    cout << "Enter an operator (+, -, *, /): ";
+    cin >> kmk;
+
+    cout << "Enter second number: ";
+    cin >> num2;
+
+    // Performing the operation
+    if (kmk == '+') {
+        result = num1 + num2;
+    } else if (kmk == '-') {
+        result = num1 - num2;
+    } else if (kmk == '*') {
+        result = num1 * num2;
+    } else if (kmk == '/') {
+        if (num2 != 0) {
+            result = num1 / num2;
+        } else {
+            cout << "Error: Division by zero is not allowed." << endl;
+            return 1; // Exit the program with an error code
+        }
+    } else {
+        cout << "Error: Invalid operator." << endl;
+        return 1;
+    }
+
+    // Displaying the result
+    cout << "Result: " << result << endl;
+
+    return 0;
+}
